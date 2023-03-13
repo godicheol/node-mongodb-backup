@@ -28,7 +28,7 @@ backup.exec({
 });
 ```
 
-#### [cron format](https://www.npmjs.com/package/node-schedule) - Cron format guide
+#### [link](https://www.npmjs.com/package/node-schedule) - Cron format guide
 
 ```js
 let job;
