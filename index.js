@@ -101,7 +101,7 @@ const DEFAULT_OPTIONS = {
     }
 
     return {
-        backup: backup,
+        exec: backup,
         schedule: schedule.scheduleJob,
     }
 });

@@ -8,7 +8,7 @@ const backup = require('backup-mongodb');
 ```
 
 ```js
-backup.backup({
+backup.exec({
     uri: "mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/?authSource=<AUTH DB>",
     gzip: true,
     out: path.join(process.cwd(), "backup")
@@ -16,7 +16,7 @@ backup.backup({
 ```
 
 ```js
-backup.backup({
+backup.exec({
     host: "localhost",
     port: 27017,
     authenticationDatabase: null,
@@ -28,6 +28,8 @@ backup.backup({
     out: path.join(process.cwd(), "backup")
 });
 ```
+
+[cron format](https://www.npmjs.com/package/node-schedule) - npm
 
 ```js
 let job;
