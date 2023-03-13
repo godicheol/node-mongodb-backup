@@ -1,0 +1,24 @@
+{
+  "name": "javascript-module-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "init": "rimraf .git",
+    "html": "open-cli ./index.html"
+  },
+  "author": "godicheol <godicheol@gmail.com>",
+  "license": "ISC",
+  "keywords": [
+    "javascript"
+  ],
+  "devDependencies": {
+    "mkdirp": "^2.1.5",
+    "open-cli": "^7.1.0",
+    "rimraf": "^4.4.0"
+  },
+  "peerDependencies": {
+    "node-schedule": "^2.1.1",
+    "os": "^0.1.2"
+  }
+}
