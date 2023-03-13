@@ -88,7 +88,7 @@ const DEFAULT_OPTIONS = {
     // │    └──────────────────── minute (0 - 59)
     // └───────────────────────── second (0 - 59, OPTIONAL)
     const setSchedule = function(cron, options, cb) {
-        const job = schedule.scheduleJob(cron, async function() {
+        return schedule.scheduleJob(cron, async function() {
             try {
                 await backup(options);
                 cb(null, true);
@@ -96,12 +96,10 @@ const DEFAULT_OPTIONS = {
                 cb(err);
             }
         });
-
-        return job;
     }
 
     return {
         exec: backup,
-        schedule: schedule.scheduleJob,
+        schedule: setSchedule,
     }
 });
