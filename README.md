@@ -7,7 +7,7 @@ const backup = require('mongodb-backup');
 ```
 
 ```js
-backup.exec({
+await backup.exec({
     uri: "mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/?authSource=<AUTH DB>",
     gzip: true,
     out: path.join(process.cwd(), "backup")
@@ -15,7 +15,7 @@ backup.exec({
 ```
 
 ```js
-backup.exec({
+await backup.exec({
     host: "localhost",
     port: 27017,
     authenticationDatabase: "admin", // authSource
