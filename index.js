@@ -6,7 +6,7 @@ const DEFAULT_OPTIONS = {
     uri: null, // mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/?authSource=<AUTH DB>
     host: "localhost", // localhost
     port: 27017, // 27017
-    authenticationDatabase: null, // admin?
+    authenticationDatabase: "admin",
     authenticationMechanism: null,
     username: null,
     password: null,
@@ -25,7 +25,7 @@ const DEFAULT_OPTIONS = {
         module.exports = factory();
     } else {
         // Browser window.moduleName
-        root.backup = factory();
+        root.mongodbBackup = factory();
     }
 })(this, function() {
     'use strict';

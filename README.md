@@ -3,7 +3,7 @@
 #### [link](https://www.mongodb.com/docs/database-tools/mongodump/) - Install mongoDB database tools
 
 ```js
-const backup = require('backup-mongodb');
+const backup = require('mongodb-backup');
 ```
 
 ```js
@@ -18,7 +18,7 @@ backup.exec({
 backup.exec({
     host: "localhost",
     port: 27017,
-    authenticationDatabase: null,
+    authenticationDatabase: "admin", // authSource
     authenticationMechanism: null,
     username: "admin",
     password: "1234",

@@ -1,5 +1,5 @@
 {
-  "name": "backup-mongodb",
+  "name": "mongodb-backup",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "html": "open-cli ./index.html"
   },
   "author": "godicheol <godicheol@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "keywords": [
     "javascript"
   ],
