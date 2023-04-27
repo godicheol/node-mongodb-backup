@@ -4,18 +4,18 @@ const { spawn } = require('child_process');
 const schedule = require('node-schedule');
 const os = require('os');
 
-const DEFAULT_OPTIONS = {
-    uri: null, // mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/?authSource=<AUTH DB>
-    host: "localhost", // localhost
-    port: 27017, // 27017
-    authenticationDatabase: "admin",
-    authenticationMechanism: null,
-    username: null,
-    password: null,
-    db: null, // database name
-    gzip: true,
-    out: process.cwd()
-}
+// const DEFAULT_OPTIONS = {
+//     uri: null, // mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/?authSource=<AUTH DB>
+//     host: "localhost", // localhost
+//     port: 27017, // 27017
+//     authenticationDatabase: "admin",
+//     authenticationMechanism: null,
+//     username: null,
+//     password: null,
+//     db: null, // database name
+//     gzip: true,
+//     out: process.cwd()
+// }
 
 const backup = function(options) {
     return new Promise(function(resolve, reject) {
@@ -42,7 +42,6 @@ const backup = function(options) {
             }
         }
 
-        // install mongodb database tools
         // https://www.mongodb.com/docs/database-tools/mongodump/
         const pcss = spawn('mongodump', optionArray, {
             shell: os.platform() === "win32" ? true : undefined
@@ -75,7 +74,7 @@ const backup = function(options) {
 // │    └──────────────────── minute (0 - 59)
 // └───────────────────────── second (0 - 59, OPTIONAL)
 const setSchedule = function(cron, options, cb) {
-    return schedule.scheduleJob(cron, async function() {
+    const job = schedule.scheduleJob(cron, async function() {
         try {
             await backup(options);
             cb(null, true);
@@ -83,9 +82,11 @@ const setSchedule = function(cron, options, cb) {
             cb(err);
         }
     });
+
+    return job;
 }
 
 export default {
-    exec: backup,
+    backup: backup,
     schedule: setSchedule
 }

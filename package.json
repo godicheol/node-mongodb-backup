@@ -1,5 +1,5 @@
 {
-  "name": "mongodb-backup",
+  "name": "node-mongodb-backup",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -18,6 +18,7 @@
     "rimraf": "^4.4.0"
   },
   "peerDependencies": {
+    "child_process": "^1.0.2",
     "node-schedule": "^2.1.1",
     "os": "^0.1.2"
   }

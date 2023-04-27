@@ -1,9 +1,10 @@
 ## Usase
 
-#### [link](https://www.mongodb.com/docs/database-tools/mongodump/) - Install mongoDB database tools
+#### [mongodump](https://www.mongodb.com/docs/database-tools/mongodump/)
+#### [node-schedule](https://www.npmjs.com/package/node-schedule)
 
 ```js
-const backup = require('mongodb-backup');
+const backup = require('node-mongodb-backup');
 ```
 
 ```js
@@ -28,7 +29,7 @@ await backup.exec({
 });
 ```
 
-#### [link](https://www.npmjs.com/package/node-schedule) - Cron format guide
+- Schedule
 
 ```js
 let job;
